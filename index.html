@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="title">Dom calculator</h1>
+    <p id="description">Dom Calculator using HTML , CSS and DOM Elements</p>
+    <div class="container">   
+    <div class="calculator">
+                <input type="text" placeholder="0" id="result">
+    
+    <div class="numpad">
+ <button id="clear"  onclick="Clear()">C</button>
+<button   onclick="arrow('←')">←</button>
+<button   onclick="display('.')">.</button>
+<button   id="mul"  onclick="display ('*')">x</button>
+<button   onclick="display('7')">7</button>
+<button    onclick="display('8')">8</button>
+<button    onclick="display('9')">9</button>
+<button   id="division" onclick="display('/')">/</button>
+<button   onclick="display('4')">4</button>
+<button   onclick="display('5')">5</button>
+<button   onclick="display('6')">6</button>
+<button  id="subtract" onclick="display('-')">-</button>
+<button id="1" onclick="display('1')">1</button>
+<button id="2" onclick="display('2')">2</button>
+<button  id="3" onclick="display('3')">3</button>
+<button  id="add" onclick="display('+')">+</button>
+<button id="zero" onclick="display('0')">0</button>
+<button  id="zeros" onclick="display('00')">00</button>
+<button   onclick="calculate()" id="equal">= </button>
+</div>
+</div>
+</div>
+
+<script>
+
+let output=document.getElementById("result");
+
+function display(num){
+    output.value += num;
+}
+
+function calculate(){
+   
+    try{
+        output.value=eval(output.value);
+    }
+    catch(err){
+        alert("Only Numbers Are Allowed")
+    }
+}
+
+function Clear(){
+    output.value = "";
+}
+function arrow(){
+    output.value=output.value.slice(0, -1);
+}
+
+
+
+
+ </script>
+ <script src = "https://app.zenclass.in/sheets/v1/js/zen/suite/bundle.js"></script>
+</body>
+</html>
